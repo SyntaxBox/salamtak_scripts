@@ -28,12 +28,12 @@ sleep 3
 
 # Tag 2: Open two terminals
 switch_to_tag 2
-open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose run up app_dev"
+open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up app_dev"
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && npm run dev"
 
 # Tag 3: Open two more terminals
 switch_to_tag 3
-open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose run up db"
+open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up db"
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && npx prisma studio"
 
 # Setup for HDMI-1 screen
