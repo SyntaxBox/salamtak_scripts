@@ -7,12 +7,6 @@ switch_to_tag() {
     sleep 0.3
 }
 
-toggle_screen() {
-    xdotool key Alt+period
-    sleep 0.3
-}
-
-
 # Function to open a terminal and run a command
 open_terminal_run() {
     local command="$1"
