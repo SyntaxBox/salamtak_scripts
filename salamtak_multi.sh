@@ -27,21 +27,21 @@ thorium-browser &
 sleep 3
 
 # Tag 2: Open two terminals
-switch_to_tag 4
+switch_to_tag 2
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up app_dev"
 open_terminal_run "cd ~/dev/web/salamtak_site && npm run dev"
 
 # Tag 3: Open two more terminals
-switch_to_tag 5
+switch_to_tag 3
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up db"
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && npx prisma studio"
 
 # Setup for HDMI-1 screen
-# toggle_screen
+toggle_screen
 # Tag 1: Open Thorium Browser
-# switch_to_tag 1
-# thorium-browser &
-# sleep 1
+switch_to_tag 1
+thorium-browser &
+sleep 1
 
 # Tag 2: Open terminal for salamtak_site
 switch_to_tag 2
