@@ -1,101 +1,188 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { FeatureCard } from "@/components/FeatureCard";
+import { LearningPath } from "@/components/LearningPath";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardDescription,
+} from "@/components/ui/card";
+import {
+  CheckCircle,
+  BookOpen,
+  Users,
+  Award,
+  Star,
+  Target,
+  NotebookPen,
+} from "lucide-react";
+
+const FEATURES = [
+  {
+    icon: CheckCircle,
+    title: "منهج متكامل",
+    description: "برنامج تعليمي شامل يغطي جميع جوانب القراءة والتجويد",
+  },
+  {
+    icon: BookOpen,
+    title: "تعلم تفاعلي",
+    description: "أدوات تفاعلية تجعل عملية التعلم ممتعة وفعالة",
+  },
+  {
+    icon: Users,
+    title: "مجتمع داعم",
+    description: "تواصل مع طلاب آخرين وتبادل الخبرات والمعرفة",
+  },
+  {
+    icon: Award,
+    title: "شهادات معتمدة",
+    description: "احصل على شهادات معترف بها عند إكمال المراحل المختلفة",
+  },
+  {
+    icon: Star,
+    title: "تعليم مخصص",
+    description: "دروس مصممة حسب مستواك واحتياجاتك الفردية",
+  },
+  {
+    icon: NotebookPen,
+    title: "دورات تعليمية",
+    description:
+      "دورات مكثفة حضوريا وأونلاين في التجويد وشرح مختلف المتون العلمية",
+  },
+];
+
+const STEPS = [
+  {
+    icon: Users,
+    title: "سجل حساباً",
+    description: "أنشئ حسابك الشخصي وابدأ رحلتك التعليمية",
+  },
+  {
+    icon: Target,
+    title: "اختر مستواك",
+    description: "حدد مستواك الحالي وابدأ من حيث تنتمي",
+  },
+  {
+    icon: BookOpen,
+    title: "ابدأ التعلم",
+    description: "استمتع بالدروس التفاعلية وتتبع تقدمك",
+  },
+];
+
+const HeroSection = () => (
+  <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-cream to-white">
+    <div className="container mx-auto text-center px-4">
+      <h1 className="text-6xl md:text-6xl font-bold mb-6 text-forest leading-tight">
+        مقرأةالإمام نافع
+      </h1>
+      <p className="text-xl md:text-3xl mb-8 text-mint max-w-3xl mx-auto">
+        مدرسة تهتم بتعليم التجويد والقراءات لكامل المستويات والأعمار
+      </p>
+      <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto">
+        تلاوة القرآن الكريم من أعظم العبادات التي تُقرب العبد من ربه، فهي تهذيب
+        للنفس وراحة للقلب. عند التلاوة بتدبر وإتقان للتجويد، يتجلى جمال كلام
+        الله ويزداد الإيمان قوة وثباتًا. كما أن الاستماع إلى التلاوة بخشوع يبعث
+        في النفس السكينة ويُحيي الروح بمعاني الهداية والرحمة.
+      </p>
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <Button className="bg-forest hover:bg-mint text-white text-lg px-8 py-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+          ابدأ رحلتك التعليمية
+        </Button>
+        <Button
+          variant="outline"
+          className="border-forest text-forest hover:bg-forest hover:text-white text-lg px-8 py-6 rounded-full transition-all duration-300"
+        >
+          تعرف على المزيد
+        </Button>
+      </div>
+    </div>
+  </section>
+);
+
+const FeaturesSection = () => (
+  <section className="py-16 bg-white">
+    <div className="container mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-forest">
+        لماذا مقرأة للإمام نافع؟
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {FEATURES.map((feature, index) => (
+          <FeatureCard key={index} {...feature} />
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const LearningPathSection = () => (
+  <section className="py-16 bg-cream">
+    <div className="container mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-forest">
+        رحلتك التعليمية
+      </h2>
+      <LearningPath />
+    </div>
+  </section>
+);
+
+const GettingStartedSection = () => (
+  <section className="py-16 bg-white">
+    <div className="container mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-forest">
+        كيف تبدأ؟
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {STEPS.map((step, index) => (
+          <Card
+            key={index}
+            className="bg-cream border-none shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <CardHeader>
+              <div className="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-4">
+                <step.icon className="w-8 h-8 text-white" />
+              </div>
+              <CardTitle className="text-xl font-bold text-center text-forest">
+                {index + 1}. {step.title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center text-forest text-lg">
+                {step.description}
+              </CardDescription>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const CTASection = () => (
+  <section className="py-16 bg-forest text-white">
+    <div className="container mx-auto text-center px-4">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        ابدأ رحلتك التعليمية اليوم
+      </h2>
+      <p className="text-xl mb-8 max-w-2xl mx-auto">
+        انضم إلى الآلاف من الطلاب الذين يحسنون مهاراتهم في القراءة والتجويد مع
+        مقرأة للإمام نافع
+      </p>
+      <Button className="bg-white text-forest hover:bg-cream text-lg px-8 py-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+        سجل الآن مجاناً
+      </Button>
+    </div>
+  </section>
+);
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <main>
+      <HeroSection />
+      <FeaturesSection />
+      {/* <LearningPathSection /> */}
+      {/* <GettingStartedSection /> */}
+      <CTASection />
+    </main>
   );
 }
