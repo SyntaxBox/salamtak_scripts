@@ -10,12 +10,15 @@ import {
 } from "@/components/ui/sheet";
 import SocialMedia from "@/components/SocialMedia";
 import { Menu } from "lucide-react";
+
 function NavLinks({
   className,
   showHome,
+  onLinkClick,
 }: {
   className?: string;
   showHome?: boolean;
+  onLinkClick?: () => void;
 }) {
   return (
     <ul
@@ -26,6 +29,7 @@ function NavLinks({
           <Link
             href="/"
             className="hover:text-sage transition-colors duration-300 block"
+            onClick={onLinkClick}
           >
             الرئيسية
           </Link>
@@ -35,6 +39,7 @@ function NavLinks({
         <Link
           href="/registration"
           className="hover:text-sage transition-colors duration-300 block"
+          onClick={onLinkClick}
         >
           التسجيل
         </Link>
@@ -43,6 +48,7 @@ function NavLinks({
         <Link
           href="/test-results"
           className="hover:text-sage transition-colors duration-300 block"
+          onClick={onLinkClick}
         >
           نتائج الاختبار
         </Link>
@@ -51,6 +57,7 @@ function NavLinks({
         <Link
           href="/subjects"
           className="hover:text-sage transition-colors duration-300 block"
+          onClick={onLinkClick}
         >
           المواضيع
         </Link>
@@ -59,6 +66,7 @@ function NavLinks({
         <Link
           href="/reading-progress"
           className="hover:text-sage transition-colors duration-300 block"
+          onClick={onLinkClick}
         >
           نظام تقدم القراءة
         </Link>
@@ -67,6 +75,7 @@ function NavLinks({
         <Link
           href="/publications"
           className="hover:text-sage transition-colors duration-300 block"
+          onClick={onLinkClick}
         >
           المنشورات والمقالات
         </Link>
@@ -77,6 +86,10 @@ function NavLinks({
 
 export function ResponsiveNavbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav className="container mx-auto flex justify-between items-center px-4 sm:px-6 md:px-8">
@@ -91,7 +104,6 @@ export function ResponsiveNavbar() {
         <NavLinks className="flex" />
         <SocialMedia />
       </div>
-
       {/* Mobile Navigation */}
       <div className="lg:hidden flex items-center justify-between w-full">
         <Link
@@ -112,7 +124,7 @@ export function ResponsiveNavbar() {
               مدرسة تهتم بتعليم التجويد والقراءات لكامل المستويات والأعمار
             </SheetDescription>
             <div className="flex flex-col h-full mt-8">
-              <NavLinks showHome />
+              <NavLinks showHome onLinkClick={handleLinkClick} />
               <div className="mt-8">
                 <SocialMedia />
               </div>
