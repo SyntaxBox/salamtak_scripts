@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 const amiri = Amiri({
   weight: ["400", "700"],
+  subsets: ["arabic"],
 });
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
