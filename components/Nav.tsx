@@ -80,7 +80,7 @@ export function ResponsiveNavbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="lg:hidden flex items-center">
+      <div className="lg:hidden flex items-center justify-between w-full">
         <Link
           href="/"
           className="text-2xl sm:text-3xl font-bold hover:text-sage transition-colors duration-300"
