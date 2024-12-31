@@ -1,20 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
-import { LearningPath } from "@/components/LearningPath";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardDescription,
-} from "@/components/ui/card";
+// import { LearningPath } from "@/components/LearningPath";
+// import {
+//   Card,
+//   CardHeader,
+//   CardTitle,
+//   CardContent,
+//   CardDescription,
+// } from "@/components/ui/card";
 import {
   CheckCircle,
   BookOpen,
   Users,
   Award,
   Star,
-  Target,
+  // Target,
   NotebookPen,
 } from "lucide-react";
 
@@ -52,24 +52,24 @@ const FEATURES = [
   },
 ];
 
-const STEPS = [
-  {
-    icon: Users,
-    title: "سجل حساباً",
-    description: "أنشئ حسابك الشخصي وابدأ رحلتك التعليمية",
-  },
-  {
-    icon: Target,
-    title: "اختر مستواك",
-    description: "حدد مستواك الحالي وابدأ من حيث تنتمي",
-  },
-  {
-    icon: BookOpen,
-    title: "ابدأ التعلم",
-    description: "استمتع بالدروس التفاعلية وتتبع تقدمك",
-  },
-];
-
+// const STEPS = [
+//   {
+//     icon: Users,
+//     title: "سجل حساباً",
+//     description: "أنشئ حسابك الشخصي وابدأ رحلتك التعليمية",
+//   },
+//   {
+//     icon: Target,
+//     title: "اختر مستواك",
+//     description: "حدد مستواك الحالي وابدأ من حيث تنتمي",
+//   },
+//   {
+//     icon: BookOpen,
+//     title: "ابدأ التعلم",
+//     description: "استمتع بالدروس التفاعلية وتتبع تقدمك",
+//   },
+// ];
+//
 const HeroSection = () => (
   <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-cream to-white">
     <div className="container mx-auto text-center px-4">
@@ -115,49 +115,49 @@ const FeaturesSection = () => (
   </section>
 );
 
-const LearningPathSection = () => (
-  <section className="py-16 bg-cream">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-forest">
-        رحلتك التعليمية
-      </h2>
-      <LearningPath />
-    </div>
-  </section>
-);
-
-const GettingStartedSection = () => (
-  <section className="py-16 bg-white">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-forest">
-        كيف تبدأ؟
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {STEPS.map((step, index) => (
-          <Card
-            key={index}
-            className="bg-cream border-none shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <CardHeader>
-              <div className="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-4">
-                <step.icon className="w-8 h-8 text-white" />
-              </div>
-              <CardTitle className="text-xl font-bold text-center text-forest">
-                {index + 1}. {step.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-center text-forest text-lg">
-                {step.description}
-              </CardDescription>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
+// const LearningPathSection = () => (
+//   <section className="py-16 bg-cream">
+//     <div className="container mx-auto px-4">
+//       <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-forest">
+//         رحلتك التعليمية
+//       </h2>
+//       <LearningPath />
+//     </div>
+//   </section>
+// );
+//
+// const GettingStartedSection = () => (
+//   <section className="py-16 bg-white">
+//     <div className="container mx-auto px-4">
+//       <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-forest">
+//         كيف تبدأ؟
+//       </h2>
+//       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+//         {STEPS.map((step, index) => (
+//           <Card
+//             key={index}
+//             className="bg-cream border-none shadow-lg hover:shadow-xl transition-all duration-300"
+//           >
+//             <CardHeader>
+//               <div className="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-4">
+//                 <step.icon className="w-8 h-8 text-white" />
+//               </div>
+//               <CardTitle className="text-xl font-bold text-center text-forest">
+//                 {index + 1}. {step.title}
+//               </CardTitle>
+//             </CardHeader>
+//             <CardContent>
+//               <CardDescription className="text-center text-forest text-lg">
+//                 {step.description}
+//               </CardDescription>
+//             </CardContent>
+//           </Card>
+//         ))}
+//       </div>
+//     </div>
+//   </section>
+// );
+//
 const CTASection = () => (
   <section className="py-16 bg-forest text-white">
     <div className="container mx-auto text-center px-4">

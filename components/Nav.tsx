@@ -8,7 +8,6 @@ import {
   SheetDescription,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
 import SocialMedia from "@/components/SocialMedia";
 import { Menu } from "lucide-react";
 const NavLinks = ({ className = "", onClick = () => {} }) => (
