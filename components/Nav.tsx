@@ -10,57 +10,70 @@ import {
 } from "@/components/ui/sheet";
 import SocialMedia from "@/components/SocialMedia";
 import { Menu } from "lucide-react";
-const NavLinks = ({ className = "", onClick = () => {} }) => (
-  <ul
-    className={`space-y-4 md:space-y-0 md:space-x-6 md:space-x-reverse ${className}`}
-  >
-    <li>
-      <Link
-        href="/registration"
-        className="hover:text-sage transition-colors duration-300 block"
-        onClick={onClick}
-      >
-        التسجيل
-      </Link>
-    </li>
-    <li>
-      <Link
-        href="/test-results"
-        className="hover:text-sage transition-colors duration-300 block"
-        onClick={onClick}
-      >
-        نتائج الاختبار
-      </Link>
-    </li>
-    <li>
-      <Link
-        href="/subjects"
-        className="hover:text-sage transition-colors duration-300 block"
-        onClick={onClick}
-      >
-        المواضيع
-      </Link>
-    </li>
-    <li>
-      <Link
-        href="/reading-progress"
-        className="hover:text-sage transition-colors duration-300 block"
-        onClick={onClick}
-      >
-        نظام تقدم القراءة
-      </Link>
-    </li>
-    <li>
-      <Link
-        href="/publications"
-        className="hover:text-sage transition-colors duration-300 block"
-        onClick={onClick}
-      >
-        المنشورات والمقالات
-      </Link>
-    </li>
-  </ul>
-);
+function NavLinks({
+  className,
+  showHome,
+}: {
+  className?: string;
+  showHome?: boolean;
+}) {
+  return (
+    <ul
+      className={`space-y-4 md:space-y-0 md:space-x-6 md:space-x-reverse ${className}`}
+    >
+      <li>
+        {showHome && (
+          <Link
+            href="/"
+            className="hover:text-sage transition-colors duration-300 block"
+          >
+            الرئيسية
+          </Link>
+        )}
+      </li>
+      <li>
+        <Link
+          href="/registration"
+          className="hover:text-sage transition-colors duration-300 block"
+        >
+          التسجيل
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/test-results"
+          className="hover:text-sage transition-colors duration-300 block"
+        >
+          نتائج الاختبار
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/subjects"
+          className="hover:text-sage transition-colors duration-300 block"
+        >
+          المواضيع
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/reading-progress"
+          className="hover:text-sage transition-colors duration-300 block"
+        >
+          نظام تقدم القراءة
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/publications"
+          className="hover:text-sage transition-colors duration-300 block"
+        >
+          المنشورات والمقالات
+        </Link>
+      </li>
+    </ul>
+  );
+}
 
 export function ResponsiveNavbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -91,13 +104,15 @@ export function ResponsiveNavbar() {
           <SheetTrigger>
             <Menu size={24} />
           </SheetTrigger>
-          <SheetContent side="right" className="w-80 bg-forest text-cream p-6">
-            <SheetTitle hidden>Navigation Menu</SheetTitle>
-            <SheetDescription hidden>
-              Use the menu below to navigate through the application.
+          <SheetContent side="left" className="w-80 bg-forest text-cream pt-12">
+            <SheetTitle className="text-cream my-4 text-2xl">
+              مقرأة للإمام نافع
+            </SheetTitle>
+            <SheetDescription className="text-cream my-2">
+              مدرسة تهتم بتعليم التجويد والقراءات لكامل المستويات والأعمار
             </SheetDescription>
             <div className="flex flex-col h-full mt-8">
-              <NavLinks onClick={() => setIsOpen(false)} />
+              <NavLinks showHome />
               <div className="mt-8">
                 <SocialMedia />
               </div>
