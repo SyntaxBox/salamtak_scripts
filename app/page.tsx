@@ -73,13 +73,13 @@ const STEPS = [
 const HeroSection = () => (
   <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-cream to-white">
     <div className="container mx-auto text-center px-4">
-      <h1 className="text-6xl md:text-6xl font-bold mb-6 text-forest leading-tight">
+      <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-forest leading-tight">
         مقرأةالإمام نافع
       </h1>
-      <p className="text-xl md:text-3xl mb-8 text-mint max-w-3xl mx-auto">
+      <p className="text-lg sm:text-2xl mb-8 text-mint max-w-3xl mx-auto">
         مدرسة تهتم بتعليم التجويد والقراءات لكامل المستويات والأعمار
       </p>
-      <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto">
+      <p className="text-md sm:text-lg mb-12 max-w-4xl mx-auto">
         تلاوة القرآن الكريم من أعظم العبادات التي تُقرب العبد من ربه، فهي تهذيب
         للنفس وراحة للقلب. عند التلاوة بتدبر وإتقان للتجويد، يتجلى جمال كلام
         الله ويزداد الإيمان قوة وثباتًا. كما أن الاستماع إلى التلاوة بخشوع يبعث
@@ -103,10 +103,10 @@ const HeroSection = () => (
 const FeaturesSection = () => (
   <section className="py-16 bg-white">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-forest">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-forest">
         لماذا مقرأة للإمام نافع؟
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {FEATURES.map((feature, index) => (
           <FeatureCard key={index} {...feature} />
         ))}
@@ -118,7 +118,7 @@ const FeaturesSection = () => (
 const LearningPathSection = () => (
   <section className="py-16 bg-cream">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-forest">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-forest">
         رحلتك التعليمية
       </h2>
       <LearningPath />
@@ -129,10 +129,10 @@ const LearningPathSection = () => (
 const GettingStartedSection = () => (
   <section className="py-16 bg-white">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-forest">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-forest">
         كيف تبدأ؟
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {STEPS.map((step, index) => (
           <Card
             key={index}
@@ -161,7 +161,7 @@ const GettingStartedSection = () => (
 const CTASection = () => (
   <section className="py-16 bg-forest text-white">
     <div className="container mx-auto text-center px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6">
         ابدأ رحلتك التعليمية اليوم
       </h2>
       <p className="text-xl mb-8 max-w-2xl mx-auto">
