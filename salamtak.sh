@@ -20,12 +20,20 @@ switch_to_tag 1
 thorium-browser &
 sleep 3
 
-# Tag 2: Open two terminals
+# Tag 2: Open terminal for salamtak_site
+switch_to_tag 2
+open_terminal_run "nvim ~/dev/web/salamtak_site"
+
+# Tag 3: Open terminal for salamtak_server_node
+switch_to_tag 3
+open_terminal_run "nvim ~/dev/servers/nodejs/salamtak_server_node"
+
+# Tag 4: Open two terminals
 switch_to_tag 4
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up app_dev"
 open_terminal_run "cd ~/dev/web/salamtak_site && npm run dev"
 
-# Tag 3: Open two more terminals
+# Tag 5: Open two more terminals
 switch_to_tag 5
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up db"
 open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && npx prisma studio"
@@ -36,12 +44,4 @@ open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && npx prisma st
 # switch_to_tag 1
 # thorium-browser &
 # sleep 1
-
-# Tag 2: Open terminal for salamtak_site
-switch_to_tag 2
-open_terminal_run "nvim ~/dev/web/salamtak_site"
-
-# Tag 3: Open terminal for salamtak_server_node
-switch_to_tag 3
-open_terminal_run "nvim ~/dev/servers/nodejs/salamtak_server_node"
 
