@@ -17,26 +17,26 @@ open_terminal_run() {
 
 # Tag 1: Open Thorium Browser
 switch_to_tag 1
-thorium-browser &
+zen-browser &
 sleep 3
 
 # Tag 2: Open terminal for salamtak_site
 switch_to_tag 2
-open_terminal_run "nvim ~/dev/web/salamtak_site"
+open_terminal_run "nvim ~/dev/web/salamtak/salamtak_site"
 
 # Tag 3: Open terminal for salamtak_server_node
 switch_to_tag 3
-open_terminal_run "nvim ~/dev/servers/nodejs/salamtak_server_node"
+open_terminal_run "nvim ~/dev/web/salamtak/salamtak_server_node"
 
 # Tag 4: Open two terminals
 switch_to_tag 4
-open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up app_dev"
-open_terminal_run "cd ~/dev/web/salamtak_site && npm run dev"
+open_terminal_run "cd ~/dev/web/salamtak/salamtak_server_node && docker compose up app_dev"
+open_terminal_run "cd ~/dev/web/salamtak/salamtak_site && npm run dev"
 
 # Tag 5: Open two more terminals
 switch_to_tag 5
-open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && docker compose up db"
-open_terminal_run "cd ~/dev/servers/nodejs/salamtak_server_node && npx prisma studio"
+open_terminal_run "cd ~/dev/web/salamtak/salamtak_server_node && docker compose up db"
+open_terminal_run "cd ~/dev/web/salamtak/salamtak_server_node && npx prisma studio"
 
 # Setup for HDMI-1 screen
 # toggle_screen
