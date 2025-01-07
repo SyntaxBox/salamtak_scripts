@@ -17,6 +17,7 @@ import {
   // Target,
   NotebookPen,
 } from "lucide-react";
+import Link from "next/link";
 
 const FEATURES = [
   {
@@ -86,14 +87,18 @@ const HeroSection = () => (
         في النفس السكينة ويُحيي الروح بمعاني الهداية والرحمة.
       </p>
       <div className="flex flex-col sm:flex-row justify-center gap-4">
-        <Button className="bg-forest hover:bg-mint text-white text-lg px-8 py-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-          ابدأ رحلتك التعليمية
+        <Button
+          asChild
+          className="bg-forest hover:bg-mint text-white text-lg px-8 py-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          <Link href="/registration">ابدأ رحلتك التعليمية</Link>
         </Button>
         <Button
           variant="outline"
+          asChild
           className="border-forest text-forest hover:bg-forest hover:text-white text-lg px-8 py-6 rounded-full transition-all duration-300"
         >
-          تعرف على المزيد
+          <Link href="#">تعرف على المزيد</Link>
         </Button>
       </div>
     </div>
@@ -168,8 +173,11 @@ const CTASection = () => (
         انضم إلى الآلاف من الطلاب الذين يحسنون مهاراتهم في القراءة والتجويد مع
         مقرأة للإمام نافع
       </p>
-      <Button className="bg-white text-forest hover:bg-cream text-lg px-8 py-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-        سجل الآن مجاناً
+      <Button
+        asChild
+        className="bg-white text-forest hover:bg-cream text-lg px-8 py-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+      >
+        <Link href="/registration">سجل الآن مجاناً</Link>
       </Button>
     </div>
   </section>
