@@ -9,6 +9,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { notFound } from "next/navigation";
 
 export default async function PostsLayout({
   children,
@@ -20,7 +21,8 @@ export default async function PostsLayout({
   }>;
 }>) {
   const page = await params;
-  const currentPage = Number(page?.page) || 1;
+  const currentPage = Number(page?.page);
+  if (Number.isNaN(currentPage)) return notFound();
   const postsPerPage = 10; // Number of posts to show per page
 
   // Calculate pagination values

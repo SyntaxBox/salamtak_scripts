@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export default function NotFound() {
   return (
     <div
-      className="min-h-screen bg-gradient-to-b from-[#F4F6E8] to-white flex flex-col items-center justify-center text-[#005C41] p-4"
+      className="min-h-[92vh] bg-gradient-to-b from-[#F4F6E8] to-white flex flex-col items-center justify-center text-[#005C41] p-4"
       dir="rtl"
     >
       <div className="text-center">
@@ -18,10 +18,9 @@ export default function NotFound() {
           height={150}
           className="mx-auto mb-8"
         />
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">404</h1>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+        <h1 className="text-2xl md:text-3xl font-semibold mb-4">
           عذرًا، الصفحة غير موجودة
-        </h2>
+        </h1>
         <p className="text-xl mb-8">
           الصفحة التي تبحث عنها قد تكون قد تم نقلها أو حذفها أو قد لا تكون
           موجودة.
@@ -33,11 +32,12 @@ export default function NotFound() {
           >
             العودة للصفحة السابقة
           </Button>
-          <Link href="/">
-            <Button className="bg-[#8B9B6E] hover:bg-[#F4F6E8] text-white hover:text-[#005C41] text-lg px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-              الذهاب للصفحة الرئيسية
-            </Button>
-          </Link>
+          <Button
+            asChild
+            className="bg-[#8B9B6E] hover:bg-[#F4F6E8] text-white hover:text-[#005C41] text-lg px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <Link href="/">الذهاب للصفحة الرئيسية</Link>
+          </Button>
         </div>
       </div>
     </div>
