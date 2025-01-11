@@ -1,33 +1,26 @@
 "use client";
 import * as React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { useMDXComponent } from "@/hooks";
 
 import { cn } from "@/utils";
-import { A, H1, H2, H3, H4, H5, H6, P } from "@/ui";
+import { H1, H2, H3, H4, H5, H6, P } from "@/ui";
 
 const components = {
-  h1: ({ className, ...props }: JSX.IntrinsicElements["h1"]) => (
-    <H1 {...props} />
-  ),
-  h2: ({ className, ...props }: JSX.IntrinsicElements["h2"]) => (
-    <H2 {...props} />
-  ),
-  h3: ({ className, ...props }: JSX.IntrinsicElements["h3"]) => (
-    <H3 {...props} />
-  ),
-  h4: ({ className, ...props }: JSX.IntrinsicElements["h4"]) => (
-    <H4 {...props} />
-  ),
-  h5: ({ className, ...props }: JSX.IntrinsicElements["h5"]) => (
-    <H5 {...props} />
-  ),
-  h6: ({ className, ...props }: JSX.IntrinsicElements["h6"]) => (
-    <H6 {...props} />
-  ),
-  a: ({ ...props }: JSX.IntrinsicElements["a"]) =>
-    props.href ? <A href={props.href}>{props.children}</A> : <a {...props} />,
-  p: ({ className, ...props }: JSX.IntrinsicElements["p"]) => <P {...props} />,
+  h1: ({ ...props }: React.JSX.IntrinsicElements["h1"]) => <H1 {...props} />,
+  h2: ({ ...props }: React.JSX.IntrinsicElements["h2"]) => <H2 {...props} />,
+  h3: ({ ...props }: React.JSX.IntrinsicElements["h3"]) => <H3 {...props} />,
+  h4: ({ ...props }: React.JSX.IntrinsicElements["h4"]) => <H4 {...props} />,
+  h5: ({ ...props }: React.JSX.IntrinsicElements["h5"]) => <H5 {...props} />,
+  h6: ({ ...props }: React.JSX.IntrinsicElements["h6"]) => <H6 {...props} />,
+  a: ({ ...props }: React.JSX.IntrinsicElements["a"]) =>
+    props.href ? (
+      <Link href={props.href}>{props.children}</Link>
+    ) : (
+      <a {...props} />
+    ),
+  p: ({ ...props }: React.JSX.IntrinsicElements["p"]) => <P {...props} />,
   ul: ({ className, ...props }: any) => (
     <ul className={cn("my-3 mr-6 list-disc", className)} {...props} />
   ),

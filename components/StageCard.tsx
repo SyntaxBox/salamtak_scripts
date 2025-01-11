@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -12,6 +13,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { GroupsList } from "./GroupsList";
+import { Stage } from "@/types";
 
 type StageCardProps = {
   stage: Stage;

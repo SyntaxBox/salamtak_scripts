@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Amiri } from "next/font/google";
 import "./globals.css";

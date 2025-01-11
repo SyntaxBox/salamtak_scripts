@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/utils";
 
 interface CompProps {
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 export function Container({
@@ -16,7 +16,7 @@ export function Container({
       {...rest}
       className={cn(
         "h-full w-full p-2 container mx-auto max-w-4xl",
-        rest.className
+        rest.className,
       )}
     >
       {children}

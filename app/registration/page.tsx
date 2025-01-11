@@ -1,6 +1,7 @@
 import { RegistrationHeader } from "@/components/RegistrationHeader";
 import { StageCard } from "@/components/StageCard";
 import { RegistrationCTA } from "@/components/RegistrationCTA";
+import { Stage } from "@/types";
 
 const registrationStages: Stage[] = [
   {

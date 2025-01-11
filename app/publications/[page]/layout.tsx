@@ -20,7 +20,6 @@ export default async function PostsLayout({
   }>;
 }>) {
   const page = await params;
-  console.log(page);
   const currentPage = Number(page?.page) || 1;
   const postsPerPage = 10; // Number of posts to show per page
 
